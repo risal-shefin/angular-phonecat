@@ -38,7 +38,11 @@ h1 {
   width: 400px;
 }
 
-.phone:first-child {
+/* .phone:first-child {
+  display: block;
+} */
+
+.phone.selected {
   display: block;
 }
 

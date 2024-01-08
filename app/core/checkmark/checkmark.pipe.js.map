@@ -1,0 +1,1 @@
+{"version":3,"file":"checkmark.pipe.js","sourceRoot":"","sources":["checkmark.pipe.ts"],"names":[],"mappings":";AAAA,OAAO,EAAE,IAAI,EAAiB,MAAM,eAAe,CAAC;AAG7C,IAAM,aAAa,GAAnB,MAAM,aAAa;IACxB,SAAS,CAAC,KAAc;QACtB,OAAO,KAAK,CAAC,CAAC,CAAC,QAAQ,CAAC,CAAC,CAAC,QAAQ,CAAC;IACrC,CAAC;CACF,CAAA;AAJY,aAAa;IADzB,IAAI,CAAC,EAAC,IAAI,EAAE,WAAW,EAAC,CAAC;GACb,aAAa,CAIzB"}
