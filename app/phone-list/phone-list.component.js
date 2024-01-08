@@ -1,12 +1,15 @@
 "use strict";
 class PhoneListController {
-    constructor(Phone) {
+    constructor(phone) {
+        this.phones = [];
         this.query = '';
-        this.phones = Phone.query();
+        phone.query().subscribe((phones) => {
+            this.phones = phones;
+        });
         this.orderProp = 'age';
     }
 }
-PhoneListController.$inject = ['Phone'];
+PhoneListController.$inject = ['phone'];
 angular.
     module('phoneList').
     component('phoneList', {
