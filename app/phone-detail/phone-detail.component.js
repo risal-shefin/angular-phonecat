@@ -3,8 +3,9 @@ class PhoneDetailController {
     constructor($routeParams, phone) {
         this.mainImageUrl = '';
         const phoneId = $routeParams['phoneId'];
-        this.phone = phone.get({ phoneId }, (phoneData) => {
-            this.setImage(phoneData.images[0]);
+        phone.get(phoneId).subscribe((data) => {
+            this.phone = data;
+            this.setImage(data.images[0]);
         });
     }
     setImage(imageUrl) {

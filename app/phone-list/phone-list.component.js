@@ -1,8 +1,11 @@
 "use strict";
 class PhoneListController {
     constructor(phone) {
+        this.phones = [];
         this.query = '';
-        this.phones = phone.query();
+        phone.query().subscribe((phones) => {
+            this.phones = phones;
+        });
         this.orderProp = 'age';
     }
 }
