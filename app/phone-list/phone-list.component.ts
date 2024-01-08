@@ -3,9 +3,9 @@ class PhoneListController {
   orderProp: string;
   query: string = '';
 
-  static $inject = ['Phone'];
-  constructor(Phone: any) {
-    this.phones = Phone.query();
+  static $inject = ['phone'];
+  constructor(phone: any) {
+    this.phones = phone.query();
     this.orderProp = 'age';
   }
 

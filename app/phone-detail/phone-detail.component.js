@@ -1,17 +1,17 @@
 "use strict";
 class PhoneDetailController {
-    constructor($routeParams, Phone) {
+    constructor($routeParams, phone) {
         this.mainImageUrl = '';
         const phoneId = $routeParams['phoneId'];
-        this.phone = Phone.get({ phoneId }, (phone) => {
-            this.setImage(phone.images[0]);
+        this.phone = phone.get({ phoneId }, (phoneData) => {
+            this.setImage(phoneData.images[0]);
         });
     }
     setImage(imageUrl) {
         this.mainImageUrl = imageUrl;
     }
 }
-PhoneDetailController.$inject = ['$routeParams', 'Phone'];
+PhoneDetailController.$inject = ['$routeParams', 'phone'];
 angular.
     module('phoneDetail').
     component('phoneDetail', {
