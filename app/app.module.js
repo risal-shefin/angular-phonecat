@@ -1,7 +1,8 @@
-import { __decorate, __metadata } from "tslib";
+import { __decorate, __metadata, __param } from "tslib";
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { UpgradeModule } from '@angular/upgrade/static';
+import { Inject } from '@angular/core';
 let AppModule = class AppModule {
     constructor(upgrade) {
         this.upgrade = upgrade;
@@ -17,6 +18,7 @@ AppModule = __decorate([
             UpgradeModule,
         ],
     }),
+    __param(0, Inject(UpgradeModule)),
     __metadata("design:paramtypes", [UpgradeModule])
 ], AppModule);
 export { AppModule };
