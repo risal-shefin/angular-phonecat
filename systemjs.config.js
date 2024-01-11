@@ -10,7 +10,7 @@
     map: {
       'plugin-babel': 'npm:systemjs-plugin-babel/plugin-babel.js',
       'ng-loader': './systemjs-angular-loader.js',
-      app: '/app',
+      app: '/build-webpack',
       '@angular/core': 'npm:@angular/core/fesm2015/core.mjs',
       '@angular/common': 'npm:@angular/common/fesm2015/common.mjs',
       '@angular/common/http': 'npm:@angular/common/fesm2015/http.mjs',
@@ -36,7 +36,7 @@
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
       app: {
-        main: './angular-area/main.js',
+        main: './angularScripts.bundle.js',
         // defaultExtension: 'js',
         // meta: {
         //   './*.js': {
