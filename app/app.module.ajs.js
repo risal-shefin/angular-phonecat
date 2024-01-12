@@ -1,4 +1,3 @@
-"use strict";
 // Define the `phonecatApp` AngularJS module
 angular.module('phonecatApp', [
     'ngAnimate',
@@ -7,4 +6,3 @@ angular.module('phonecatApp', [
     'phoneDetail',
     'phoneList',
 ]);
-//# sourceMappingURL=app.module.ajs.js.map

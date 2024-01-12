@@ -38,7 +38,7 @@ h1 {
   width: 400px;
 }
 
-.phone:first-child {
+.phone.selected {
   display: block;
 }
 
