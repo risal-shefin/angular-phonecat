@@ -1,10 +1,10 @@
 {
   "name": "angular-phonecat",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
-  "description": "A tutorial application for AngularJS",
-  "repository": "https://github.com/angular/angular-phonecat",
+  "description": "An experimental application on co-existing AngularJS & Angular",
+  "repository": "https://github.com/risal-shefin/angularJS-phonecat-to-angular",
   "license": "MIT",
   "dependencies": {
     "@angular-devkit/build-angular": "^14.2.13",
@@ -73,23 +73,20 @@
     "webpack-cli": "^5.1.4"
   },
   "scripts": {
-    "postinstall": "npm run copy-libs",
     "update-deps": "npm update",
-    "postupdate-deps": "npm run copy-libs",
-    "copy-libs": "cpx \"node_modules/{angular,angular-*,bootstrap/dist,jquery/dist}/**/*\" app/lib -C",
     "prestart": "npm install",
+    "start": "webpack && ng serve",
+    "prebuild": "npm install",
+    "build": "webpack && ng build",
     "pretest": "npm install",
     "preprotractor": "npm run update-webdriver",
     "preupdate-webdriver": "npm install",
     "protractor": "protractor e2e-tests/protractor.conf.js",
-    "start": "http-server ./ -a localhost -p 8000 -c-1",
+    "start-http-server": "http-server ./ -a localhost -p 8000 -c-1",
     "test": "karma start karma.conf.js",
     "test-single-run": "karma start karma.conf.js --single-run",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "update-webdriver": "webdriver-manager update",
-    "prod": "http-server ./build_prod -a localhost -p 8001 -c-1",
-    "prod-webpack": "http-server ./build-webpack -a localhost -p 8002 -c-1",
-    "prod-dist": "http-server ./dist/angularjs-phonecat-to-angular -a localhost -p 8003 -c-1"
+    "update-webdriver": "webdriver-manager update"
   }
 }
