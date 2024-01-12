@@ -6,5 +6,4 @@ tmp
 .DS_Store
 .idea
 angular-phonecat-snapshots
-build-webpack/
 .angular/

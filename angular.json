@@ -14,27 +14,36 @@
             "builder": "@angular-devkit/build-angular:browser",
             "options": {
               "outputPath": "dist/angularjs-phonecat-to-angular",
-              "index": "index.html",
+              "index": "app/index.html",
               "main": "app/angular-area/main.ts",
               "tsConfig": "tsconfig.app.json",
               "assets": [
                 "app/img",
-                "app/phones"
+                "app/phones",
+                {
+                  "glob": "**/*.html",
+                  "input": "app",
+                  "ignore": ["app/angular-area/**"],
+                  "output": "./"
+                }
               ],
               "styles": [
                 "node_modules/bootstrap/dist/css/bootstrap.min.css",
                 "app/app.animations.css",
                 "app/app.css"
               ],
-              "scripts": []
+              "scripts": [
+                "node_modules/jquery/dist/jquery.js",
+                "build-webpack-ngJs/ngJsScripts.bundle.min.js"
+              ]
             },
             "configurations": {
               "production": {
                 "budgets": [
                   {
                     "type": "initial",
-                    "maximumWarning": "500kb",
-                    "maximumError": "1mb"
+                    "maximumWarning": "2mb",
+                    "maximumError": "4mb"
                   },
                   {
                     "type": "anyComponentStyle",
@@ -80,14 +89,22 @@
               "tsConfig": "tsconfig.spec.json",
               "assets": [
                 "app/img",
-                "app/phones"
+                "app/phones",
+                {
+                  "glob": "**/*.html",
+                  "input": "app",
+                  "ignore": ["app/angular-area/**"]
+                }
               ],
               "styles": [
                 "node_modules/bootstrap/dist/css/bootstrap.min.css",
                 "app/app.css",
                 "app/app.animations.css"
               ],
-              "scripts": []
+              "scripts": [
+                "node_modules/jquery/dist/jquery.js",
+                "build-webpack-ngJs/ngJsScripts.bundle.min.js"
+              ]
             }
           }
         }
