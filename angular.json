@@ -21,9 +21,9 @@
                 "app/img",
                 "app/phones",
                 {
-                  "glob": "**/*.html",
                   "input": "app",
-                  "ignore": ["app/angular-area/**"],
+                  "glob": "**/*.html",
+                  "ignore": ["angular-area/**"],
                   "output": "./"
                 }
               ],
