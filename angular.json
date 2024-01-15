@@ -23,7 +23,7 @@
                 {
                   "input": "app",
                   "glob": "**/*.html",
-                  "ignore": ["angular-area/**"],
+                  "ignore": ["angular-area/*.html"],
                   "output": "./"
                 }
               ],
