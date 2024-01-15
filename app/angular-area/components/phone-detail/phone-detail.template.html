@@ -117,3 +117,11 @@
     </li>
   </ul>
 </div>
+
+<hr>
+<div>
+  <button (click)="togglePhoneList()"> Show/Hide All Phones </button>
+  <div *ngIf="showPhoneList">
+    <phone-list></phone-list>
+  </div>
+</div>

@@ -8,6 +8,7 @@ import { routeParamsProvider } from './ajs-upgraded-providers';
 import { PhoneDetailComponent } from './components/phone-detail/phone-detail.component';
 import { FormsModule } from '@angular/forms';
 import { CheckmarkPipe } from './core/checkmark/checkmark.pipe';
+import { PhoneListComponentWrapper } from './components/phone-list/phone-list.component.wrapper';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { CheckmarkPipe } from './core/checkmark/checkmark.pipe';
   ],
   declarations: [
     PhoneDetailComponent,
-    CheckmarkPipe
+    CheckmarkPipe,
+    PhoneListComponentWrapper
   ],
   providers: [
     Phone,

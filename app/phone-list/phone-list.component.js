@@ -4,7 +4,7 @@
 angular.
   module('phoneList').
   component('phoneList', {
-    templateUrl: 'phone-list/phone-list.template.html',
+    template: `<ng-include src="'phone-list/phone-list.template.html'"></ng-include>`,
     controller: ['phone',
       function PhoneListController(phone) {
         phone.query().subscribe(phones => {
