@@ -10,5 +10,4 @@ describe('checkmark', function() {
       expect(checkmarkFilter(false)).toBe('\u2718');
     })
   );
-
 });

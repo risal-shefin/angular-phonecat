@@ -8,7 +8,7 @@ import { downgradeInjectable } from "@angular/upgrade/static";
 export interface PhoneData {
   name: string;
   snippet: string;
-  images: string;
+  images: string[];
   age: number;
 }
 
