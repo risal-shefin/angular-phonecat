@@ -4,10 +4,12 @@
 angular.
   module('phoneList').
   component('phoneList', {
-    templateUrl: 'phone-list/phone-list.template.html',
-    controller: ['Phone',
-      function PhoneListController(Phone) {
-        this.phones = Phone.query();
+    template: `<ng-include src="'phone-list/phone-list.template.html'"></ng-include>`,
+    controller: ['phone',
+      function PhoneListController(phone) {
+        phone.query().subscribe(phones => {
+          this.phones = phones;
+        });
         this.orderProp = 'age';
       }
     ]
