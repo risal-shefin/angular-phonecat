@@ -17,6 +17,7 @@ exports.config = {
 
   jasmineNodeOpts: {
     defaultTimeoutInterval: 30000
-  }
+  },
 
+  ng12Hybrid: true
 };
