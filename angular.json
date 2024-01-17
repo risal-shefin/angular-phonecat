@@ -93,6 +93,7 @@
                 "zone.js/testing"
               ],
               "tsConfig": "tsconfig.spec.json",
+              "karmaConfig": "karma.conf.cjs",
               "assets": [
                 "app/img",
                 "app/phones",
@@ -109,8 +110,7 @@
                 "app/app.animations.css"
               ],
               "scripts": [
-                "node_modules/jquery/dist/jquery.js",
-                "build-webpack-ngJs/ngJsScripts.bundle.min.js"
+                "node_modules/jquery/dist/jquery.js"
               ]
             }
           }

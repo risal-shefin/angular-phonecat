@@ -1,49 +1,25 @@
-//jshint strict: false
-module.exports = function(config) {
-  config.set({
+// Karma configuration file, see link for more information
+// https://karma-runner.github.io/1.0/config/configuration-file.html
 
-    basePath: './app',
-
-    files: [
-      'lib/angular/angular.js',
-      'lib/angular-animate/angular-animate.js',
-      'lib/angular-resource/angular-resource.js',
-      'lib/angular-route/angular-route.js',
-      '../node_modules/angular-mocks/angular-mocks.js',
-      '**/*.module.*js',
-      '**/*.service.*js',
-      '*!(.module|.spec).js',
-      '!(lib)/**/*!(.module|.spec).js',
-      '**/*.spec.js',
-    ],
-
-    autoWatch: true,
-
-    frameworks: ['jasmine'],
-
-    browsers: ['Chrome'],
-
-    plugins: [
-      'karma-chrome-launcher',
-      'karma-firefox-launcher',
-      'karma-jasmine',
-      'karma-webpack',
-    ],
-
-    webpack: {
-      // karma watches the test entry points
-      // Do NOT specify the entry option
-      // webpack watches dependencies
-
-      // webpack configuration
-      "mode": "development",
-    },
-
-    preprocessors: {
-      // process your `esmodule` syntax of your files
-      '**/*.js': ['webpack'],
-      '**/*.spec.js': ['webpack']
-    },
-
-  });
-};
+module.exports = function (config) {
+    config.set({
+      basePath: '',
+      frameworks: ['jasmine', '@angular-devkit/build-angular'],
+      files: [
+        'build-webpack-ngJs/ngJsScripts.bundle.min.js',
+        'node_modules/angular-mocks/angular-mocks.js',
+        'app/**/*.spec.js'
+      ],
+      plugins: [
+        require('karma-jasmine'),
+        require('karma-chrome-launcher'),
+        require('@angular-devkit/build-angular/plugins/karma'),
+      ],
+      client: {
+        clearContext: false // leave Jasmine Spec Runner output visible in browser
+      },
+      browsers: ['Chrome'],
+      restartOnFileChange: true
+    });
+  };
+  
