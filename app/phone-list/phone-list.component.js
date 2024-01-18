@@ -8,7 +8,8 @@ angular.
     template: `<ng-include src="'phone-list/phone-list.template.html'"></ng-include>`,
     controller: ['phone',
       function PhoneListController(phone) {
-        phone.query().subscribe(phones => {
+        this.phones = [];
+        phone.queryByPromise().then(phones => {
           this.phones = phones;
         });
         this.orderProp = 'age';

@@ -87,8 +87,8 @@
     "preupdate-webdriver": "npm install",
     "protractor": "protractor e2e-tests/protractor.conf.cjs",
     "start-http-server": "http-server ./ -a localhost -p 8000 -c-1",
-    "test": "karma start karma.conf.cjs",
-    "test-single-run": "karma start karma.conf.cjs --single-run",
+    "test": "karma start karma.angularJS.conf.cjs",
+    "test-single-run": "karma start karma.angularJS.conf.cjs --single-run",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "update-webdriver": "webdriver-manager update"

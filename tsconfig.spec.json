@@ -5,7 +5,9 @@
     "outDir": "./out-tsc/spec",
     "types": [
       "angular",
-      "jasmine"
+      "jasmine",
+      "node",
+      "angular-mocks"
     ],
   },
   "include": [

@@ -21,6 +21,14 @@ export class Phone {
   get(id: string): Observable<PhoneData> {
     return this.http.get<PhoneData>(`phones/${id}.json`);
   }
+
+  queryByPromise(): Promise<PhoneData[] | undefined> {
+    return this.query().toPromise();
+  }
+
+  getByPromise(id: string): Promise<PhoneData | undefined> {
+    return this.get(id).toPromise();
+  }
 }
 
 angular.module('core.phone')
