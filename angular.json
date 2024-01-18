@@ -22,13 +22,7 @@
               "tsConfig": "tsconfig.app.json",
               "assets": [
                 "app/img",
-                "app/phones",
-                {
-                  "input": "app",
-                  "glob": "**/*.html",
-                  "ignore": ["angular-area/**/*.html"],
-                  "output": "./"
-                }
+                "app/phones"
               ],
               "styles": [
                 "node_modules/bootstrap/dist/css/bootstrap.min.css",
@@ -96,13 +90,7 @@
               "karmaConfig": "karma.conf.cjs",
               "assets": [
                 "app/img",
-                "app/phones",
-                {
-                  "input": "app",
-                  "glob": "**/*.html",
-                  "ignore": ["angular-area/**/*.html"],
-                  "output": "./"
-                }
+                "app/phones"
               ],
               "styles": [
                 "node_modules/bootstrap/dist/css/bootstrap.min.css",

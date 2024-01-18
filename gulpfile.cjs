@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 
-const minifyHtml = require('gulp-minify-html');
+const htmlmin = require('gulp-htmlmin');
 const concat = require('gulp-concat');
 const minifyCSS = require('gulp-minify-css');
 const rename = require('gulp-rename');
@@ -8,8 +8,6 @@ const autoprefix = require('gulp-autoprefixer');
 const stripDebug = require('gulp-strip-debug');
 const uglify = require('gulp-uglify');
 const changed = require('gulp-changed');
-const jsonMinify = require('gulp-json-minify');
-const image = require('gulp-image');
 const templateCache = require('gulp-angular-templatecache');
 const del = require('del');
 const sourcemaps = require('gulp-sourcemaps');
@@ -48,6 +46,7 @@ const paths = {
             'build-temp/ngJsScripts.bundle.min.modules.js',
             'build-temp/ngJsScripts.bundle.min.services.js',
             'build-temp/ngJsScripts.bundle.min.others.js',
+            'build-temp/ngJsScripts.bundle.min.templates.js',
         ],
         ngJsAll: [
             'app/**/*.js',
@@ -58,7 +57,8 @@ const paths = {
             '!app/angular-area/**'
         ],
         html: [
-            'app/**/*.html', 
+            'app/**/*.html',
+            '!app/index.html',
             '!app/lib/**',
             '!app/angular-area/**'
         ],
@@ -75,29 +75,6 @@ gulp.task('clean', function () {
 
 gulp.task('clean-temp', function () {
     return del([paths.temp_dest]);
-});
-
-// minify new or changed HTML pages
-gulp.task('minify-html', function () {
-    var opts = {
-        empty: true, 
-        quotes: true
-    };
-
-    return gulp.src(paths.src.html)
-        .pipe(changed(paths.dest))
-        .pipe(minifyHtml(opts))
-        .pipe(gulp.dest(paths.dest));
-});
-
-// CSS concat, auto prefix, minify, then rename output file
-gulp.task('minify-css', function() {
-    return gulp.src(paths.src.css)
-        .pipe(concat('styles.css'))
-        .pipe(autoprefix('last 2 versions'))
-        .pipe(minifyCSS())
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest(paths.dest));
 });
 
 gulp.task('bundle-ng-js-libs', function() {
@@ -144,6 +121,23 @@ gulp.task('bundle-ng-js-others', function() {
         .pipe(gulp.dest(paths.temp_dest));
 });
 
+// Bundle AngularJS templates into a single JavaScript file
+gulp.task('bundle-ng-js-templates', function () {
+    return gulp.src(paths.src.html)
+        .pipe(sourcemaps.init())
+        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(templateCache({ 
+            module: 'templates',
+            standalone: true
+         }))
+        .pipe(concat(paths.bundledScriptName))
+        .pipe(stripDebug())
+        .pipe(uglify())
+        .pipe(rename({ suffix: '.templates' }))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(paths.temp_dest));
+});
+
 // Concatenate all build scripts
 gulp.task('concat-build-scripts', function () {
     return gulp.src(paths.src.ngJsBuildScripts, {"allowEmpty": true})
@@ -161,7 +155,8 @@ gulp.task('bundle-scripts', gulp.series(
         'bundle-ng-js-libs', 
         'bundle-ng-js-modules',
         'bundle-ng-js-services',
-        'bundle-ng-js-others'
+        'bundle-ng-js-others',
+        'bundle-ng-js-templates'
     ),
     'concat-build-scripts'
 ));
