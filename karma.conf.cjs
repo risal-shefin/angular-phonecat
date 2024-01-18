@@ -6,7 +6,7 @@ module.exports = function (config) {
       basePath: '',
       frameworks: ['jasmine', '@angular-devkit/build-angular'],
       files: [
-        'build-webpack-ngJs/ngJsScripts.bundle.min.js',
+        'build-ngJs/ngJsScripts.bundle.min.js',
         'node_modules/angular-mocks/angular-mocks.js',
         'app/**/*.spec.js'
       ],

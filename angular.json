@@ -37,7 +37,7 @@
               ],
               "scripts": [
                 "node_modules/jquery/dist/jquery.js",
-                "build-webpack-ngJs/ngJsScripts.bundle.min.js"
+                "build-ngJs/ngJsScripts.bundle.min.js"
               ]
             },
             "configurations": {
