@@ -87,7 +87,7 @@
                 "zone.js/testing"
               ],
               "tsConfig": "tsconfig.spec.json",
-              "karmaConfig": "karma.conf.cjs",
+              "karmaConfig": "karma.conf.js",
               "assets": [
                 "app/img",
                 "app/phones"
