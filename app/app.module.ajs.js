@@ -5,4 +5,5 @@ angular.module('phonecatApp', [
     'core',
     'phoneDetail',
     'phoneList',
+    'templates',
 ]);

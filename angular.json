@@ -22,13 +22,7 @@
               "tsConfig": "tsconfig.app.json",
               "assets": [
                 "app/img",
-                "app/phones",
-                {
-                  "input": "app",
-                  "glob": "**/*.html",
-                  "ignore": ["angular-area/**/*.html"],
-                  "output": "./"
-                }
+                "app/phones"
               ],
               "styles": [
                 "node_modules/bootstrap/dist/css/bootstrap.min.css",
@@ -37,7 +31,7 @@
               ],
               "scripts": [
                 "node_modules/jquery/dist/jquery.js",
-                "build-webpack-ngJs/ngJsScripts.bundle.min.js"
+                "build-ngJs/ngJsScripts.bundle.min.js"
               ]
             },
             "configurations": {
@@ -93,16 +87,10 @@
                 "zone.js/testing"
               ],
               "tsConfig": "tsconfig.spec.json",
-              "karmaConfig": "karma.conf.cjs",
+              "karmaConfig": "karma.conf.js",
               "assets": [
                 "app/img",
-                "app/phones",
-                {
-                  "input": "app",
-                  "glob": "**/*.html",
-                  "ignore": ["angular-area/**/*.html"],
-                  "output": "./"
-                }
+                "app/phones"
               ],
               "styles": [
                 "node_modules/bootstrap/dist/css/bootstrap.min.css",
